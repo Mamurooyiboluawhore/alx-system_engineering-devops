@@ -1,1 +1,1 @@
-this repository contains project on shell rediretory
+this repository contains a file on hello of file
