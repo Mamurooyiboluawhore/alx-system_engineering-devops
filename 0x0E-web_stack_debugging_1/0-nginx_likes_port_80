@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# a bash script on debugging
+cp -r /etc/nginx/sites-available/default  /etc/nginx/sites-enabled/default
+sudo service  nginx restart
