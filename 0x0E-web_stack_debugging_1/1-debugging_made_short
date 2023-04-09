@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # a bash script on debugging
 cp -r /etc/nginx/sites-available/default  /etc/nginx/sites-enabled/default
-pkill nginx
+pkill -o nginx
 sudo service  nginx restart
