@@ -1,2 +1,2 @@
-configures a main domain so that the suub domains will point to it
+configures a main domain so that the sub domains will point to it
 
