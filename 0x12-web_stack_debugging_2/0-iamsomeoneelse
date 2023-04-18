@@ -1,0 +1,8 @@
+#!/bin/env bash
+# A script that accepts one arguement
+
+username="$1"
+if [ "$#" -eq 1 ]
+then
+  sudo -u "$username" whoami
+fi
