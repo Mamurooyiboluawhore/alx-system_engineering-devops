@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
- sudo service nginx stop
+# a script that runs nginx with really few lines
 sed -i 's/user www-data/user nginx/' /etc/nginx/nginx.conf
 chmod 644 /etc/nginx/nginx.conf
 sed -i 's/80/8080/g' /etc/nginx/sites-available/default
