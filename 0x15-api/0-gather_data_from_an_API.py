@@ -15,7 +15,7 @@ if __name__ == "__main__":
     utask = [task for task in tasks if task.get("userId") == id_]
     ctask = [task for task in utask if task.get("completed")]
 
-    print("Employee {} is done with tasks ({}/{}):"
+    print("Employee {} is done with tasks({}/{}):"
           .format(user_ID, len(ctask), len(utask)))
 
     for task in ctask:
