@@ -12,12 +12,12 @@ if __name__ == "__main__":
     user_name = requests.get(userEP).json().get('username')
     taskEP = "{}/todos".format(url)
     tasks = requests.get(taskEP).json()
-    utask = {id_ [{"task": task.get('title'),
-           "completed": task.get('completed'),
-           "username": task.get("user_name")}]
-           for task in tasks if task.get("userId") == id_}
+    utask = {id_: [{"task": task.get('title'),
+                    "completed": task.get('completed'),
+                    "username": user_name}
+                   for task in tasks if task.get("userId") == id_]}
 
-with open("{}.jsan".format(user_id), 'w', encoding='utf-8') as file:
-    json.dump(utask, file)
+    with open("{}.json".format(id_), 'w', encoding='utf-8') as file:
+        json.dump(utask, file)
 
-
+    print(utask)
