@@ -16,7 +16,7 @@ if __name__ == "__main__":
              task.get("title")]
              for task in tasks if id_ == task.get("userId")]
 
-    """opening with csv"""
-    with open("{}.csv".format(id_), mode='w', newline='') as file:
+    # opening with csv
+    with open("{}.csv".format(id_),'w', newline='') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         writer.writerows(utask)
