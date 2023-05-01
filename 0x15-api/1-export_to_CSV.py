@@ -14,8 +14,7 @@ if __name__ == "__main__":
     tasks = requests.get(taskEP).json()
     utask = [[id_, user_ID, task.get("completed"),
              task.get("title")]
-             for task in tasks if task.get("userId") == id_]
-    print(utask)
+             for task in tasks if id_ == task.get("userId")]
 
     """opening with csv"""
     with open("{}.csv".format(id_), mode='w', newline='') as file:
