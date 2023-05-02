@@ -19,4 +19,4 @@ if __name__ == "__main__":
     # opening with csv
     with open("{}.csv".format(id_), 'w', newline='') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
-        writer.writerows(utask)
+        writer.writerows(utask).
