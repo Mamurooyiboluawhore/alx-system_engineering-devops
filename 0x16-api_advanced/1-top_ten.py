@@ -6,7 +6,7 @@ import requests
 
 
 def top_ten(subreddit):
-    url = 'https://www.reddit.com/r/{}/hot.json?limit(10)'.format(subreddit)
+    url = 'https://www.reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
     headers = {'User-Agent': 'Mamuro'}
     response = requests.get(url, headers=headers, allow_redirects=False)
     if response.status_code == 200:
