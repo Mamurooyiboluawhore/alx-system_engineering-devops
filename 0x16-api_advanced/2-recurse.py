@@ -4,6 +4,7 @@
 """
 import requests
 
+
 def recurse(subreddit, hot_list=[], after=""):
     url = 'https://www.reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
     headers = {'User-Agent': 'Mamuro'}
