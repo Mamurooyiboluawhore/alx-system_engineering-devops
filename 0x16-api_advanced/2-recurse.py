@@ -6,17 +6,17 @@ import requests
 
 
 def recurse(subreddit, hot_list=[], after=""):
-    url = 'https://www.reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
+    url = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(subreddit, after)
     headers = {'User-Agent': 'Mamuro'}
-    params = {"after": "after", "limit": 100}
-    response = requests.get(url, headers=headers, allow_redirects=False)
+    params = {"after": after}
+    response = requests.get(url, headers=headers, params=params, 
+                            allow_redirects=False)
     if response.status_code == 200:
-        response = response.json().get('data').get('children')
-        for post in response:
-            hot_list.append(post.get('data').ge    t('title'))
-        after = response.get("after")
-
-            if after:
-                 recurse(subreddit, hot_list, after)
-            return hot_list
+        response = response.json()
+        hotPost = response.get('data').get('children')
+        for post in hotPost:
+            hot_list.append(post.get('data').get('title'))
+        if after:
+            return recurse(subreddit, hot_list, after)
+        return hot_list
     return None
