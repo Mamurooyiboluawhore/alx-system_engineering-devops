@@ -2,7 +2,7 @@
 exec { 'change_ulimit':
   command => "sed -i 's/15/3028/' /etc/default/nginx",
   path => "/usr/local/bin/:/bin/"
-}->
+} ->
 
 #Restart nginx
 exec { 'nginx_restart':
