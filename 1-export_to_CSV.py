@@ -14,9 +14,9 @@ if __name__ == "__main__":
     tasks = requests.get(taskEP).json()
     utask = [[id_, user_ID, task.get("completed"),
              task.get("title")]
-             for task in tasks if id_ == task.get("userId")]
+             for task in tasks
 
-    # opening with csv
+        # opening with csv
     with open("{}.csv".format(id_), 'w', newline='') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         writer.writerows(utask)
